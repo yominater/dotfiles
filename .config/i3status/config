@@ -11,6 +11,8 @@ general {
         interval = 5
 }
 
+
+order += "tztime local"
 # order += "ipv6"
 order += "wireless _first_"
 #order += "ethernet _first_"
@@ -20,7 +22,6 @@ order += "cpu_usage"
 #order += "memory"
 order += "volume master"
 order += "battery all"
-order += "tztime local"
 #order += "exec custom_brightness"
 
 wireless _first_ {
@@ -56,9 +57,10 @@ memory {
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
-
+# 󰃭 %d-%m-%Y
 tztime local {
-        format = "󰃭 %d-%m-%Y %H:%M"
+        format = "%H:%M"
+	min_width = 465
 }
 #🕒♪
 volume master {
