@@ -35,7 +35,7 @@ ethernet _first_ {
 }
 
 battery all {
-        format = "%status %percentage %remaining"
+        format = "%status %percentage %remaining#"
 	format_percentage = "%.00f%s"
 }
 #🔋
@@ -60,7 +60,7 @@ memory {
 # 󰃭 %d-%m-%Y
 tztime local {
         format = "%H:%M"
-	min_width = 465
+	min_width = 460
 }
 #🕒♪
 volume master {
