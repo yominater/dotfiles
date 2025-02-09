@@ -11,8 +11,6 @@ alias ll="exa -l -D && exa -lf"
 alias la="exa --icons=auto --no-quotes --color=auto -D1 -A --ignore-glob '*.tmp' && exa --icons=auto --no-quotes --color=auto -f1 -A --ignore-glob '*.tmp'"
     alias ls="lx"
 
-# bonsai
-cbonsai -p
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples

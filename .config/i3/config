@@ -10,10 +10,6 @@ set $mod Mod1
 font pango:DejaVu Sans Mono 8
 
 # AUTOSTART SECTION **********************************
-# start solid color for wallpaper
-#exec --no-startup-id hsetroot -solid "#1E1E2E"
-# set a walpaper
-exec -no-startup-id ~/.fehbg &
 # make the touchpad not so sensitive
 exec --no-startup-id ~/.scripts/touchpad.sh
 # turn caps lock to control
@@ -24,6 +20,10 @@ exec --no-startup-id xmodmap ~/.xmodmap
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+# start solid color for wallpaper
+#exec --no-startup-id hsetroot -solid "#1E1E2E"
+# set a walpaper
+exec -no-startup-id ~/.fehbg &
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -169,17 +169,17 @@ bindsym $mod+0 workspace number $ws10
 bindsym $mod+m workspace number $ws11
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
-bindsym $mod+Shift+m move container to workspace number $ws11
+bindsym $mod+Shift+1 move container to workspace number $ws1 workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2 workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3 workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4 workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5 workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6 workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7 workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8 workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9 workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10 workspace number $ws10
+bindsym $mod+Shift+m move container to workspace number $ws11 workspace number $ws11
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -219,13 +219,13 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	position top
-#        status_command ~/.scripts/i3status_custom.sh
         status_command i3status
 	colors {
 		background #1E1E2E 
 		statusline #C6D0F5
 	}
 	strip_workspace_numbers yes
+	output primary
 }
 # use gpick
 # custom code ******************************************************************
