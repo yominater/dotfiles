@@ -6,6 +6,19 @@
 !/.config/i3status/
 !/.config/i3/config
 !/.config/i3status/config
+!.Xmodmap
 
 # vim files
 !.vimrc
+!.vim/
+!.vim/swap
+!.vim/plugged/*
+!.vim/plugged/
+!.vim.autoload/
+!.vim/autoload/*
+!.viminfo
+
+# user folders
+!Keys/
+!Keys/gitkey
+!sshMint.sh
