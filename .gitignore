@@ -18,7 +18,17 @@
 !.vim/autoload/*
 !.viminfo
 
+# neovim files
+!/.config/neovim/
+!/.config/neovim/*
+!/.config/neovim/lua/*
+!/.config/neovim/lua/plugins/*
+!/.config/neovim/lua/plugins/obsidian-neovim.lua
+!/.config/neovim/lua/plugins/plenary.lua
+!/.config/neovim/lua/config/options.lua
+!/.config/neovim/lua/plugins/lazy.lua
+!/.config/neovim/lua/plugins/keymaps.lua
+
+
+
 # user folders
-!Keys/
-!Keys/gitkey
-!sshMint.sh
