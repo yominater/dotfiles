@@ -14,9 +14,9 @@ general {
 # order += "ipv6"
 order += "wireless _first_"
 #order += "ethernet _first_"
-#order += "disk /"
-order += "load"
+#order += "load"
 order += "cpu_usage"
+order += "disk /"
 #order += "memory"
 order += "volume master"
 order += "battery all"
@@ -40,10 +40,10 @@ battery all {
 #🔋
 
 disk "/" {
-        format = "AVAIL %avail"
+        format = "%avail"
 }
 cpu_usage {
-	format = "%usage"
+	format = " %usage"
 }
 
 load {
@@ -58,7 +58,8 @@ memory {
 }
 
 tztime local {
-        format = "󰃭 %d-%m-%Y %H:%M"
+        #format = "󰃭 %d-%m-%Y %H:%M"
+        format = " %H:%M"
 }
 #🕒♪
 volume master {
