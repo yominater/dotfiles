@@ -16,10 +16,10 @@ order += "tztime local"
 # order += "ipv6"
 order += "wireless _first_"
 #order += "ethernet _first_"
-#order += "disk /"
 order += "load"
 order += "cpu_usage"
-#order += "memory"
+order += "memory"
+order += "disk /"
 order += "volume master"
 order += "battery all"
 #order += "exec custom_brightness"
@@ -41,7 +41,8 @@ battery all {
 #🔋
 
 disk "/" {
-        format = "AVAIL %avail"
+        format = "%avail"
+	min_width = 55
 }
 cpu_usage {
 	format = "%usage"
@@ -53,14 +54,15 @@ load {
 }
 
 memory {
-        format = "MEM %used / %available"
+        #format = "MEM %used / %available"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
+	format = "%percentage_used"
 }
 # 󰃭 %d-%m-%Y
 tztime local {
         format = "%H:%M"
-	min_width = 460
+	min_width = 350
 }
 #🕒♪
 volume master {
