@@ -12,7 +12,7 @@ font pango:DejaVu Sans Mono 8
 # make the touchpad not so sensitive
 exec --no-startup-id ~/.scripts/touchpad.sh
 # turn caps lock to control
-exec --no-startup-id xmodmap ~/.xmodmap
+# exec --no-startup-id xmodmap ~/.xmodmap
 # redshift
 exec --no-startup-id redshift -l 34.00071:-81.03481
 # auto tiling
@@ -34,7 +34,8 @@ exec --no-startup-id hsetroot -solid "#1E1E2E"
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.scripts/i3lock.sh
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -76,7 +77,7 @@ tiling_drag modifier
 bindsym $mod+Return exec i3-sensible-terminal
 
 # Send the terminal to the scratchpad
-bindsym $mod+Shift+Return move scratchpad
+bindsym $mod+i move scratchpad
 
 # Show the scratchpad terminal
 bindsym $mod+minus scratchpad show
@@ -86,15 +87,14 @@ bindsym $mod+shift+minus  move workspace current
 bindsym $mod+q kill
 
 ## APP shortcuts
-# start firefox
 bindsym $mod+f exec firefox &
 bindsym $mod+b exec gnome-boxes &
 bindsym $mod+p exec pithos &
+bindsym $mod+o exec --no-startup-id obsidian &
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
-# A more modern dmenu replacement is rofi:
-# bindsym $mod+d exec "rofi -modi drun,run -show drun"
+#bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -247,7 +247,7 @@ bindsym $mod+Shift+q exec --no-startup-id pkill -9 -f $(xprop -root | awk '/_NET
 # no title bar
 default_border pixel 0
 default_floating_border pixel 1
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 
 # Brightness changers
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
