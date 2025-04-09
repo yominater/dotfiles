@@ -13,3 +13,9 @@
 !.scripts/
 !.scripts/touchpad.sh
 !.bashrc
+
+# scripts
+!/.scripts/3secondDisplay.sh
+!/.scripts/alternating_layouts.py
+!/.scripts/i3status_custom.sh
+!/.scripts/reinstallScript.sh
