@@ -107,7 +107,7 @@ bindsym $mod+d exec "rofi -modi drun,run -show drun"
 
 # refresh eternal screen
 #exec --no-startup-id ~/.scripts/secondDisplay.sh
-bindsym exec --no-startup-id $mod+End ~/.scripts/3secondDisplay.sh
+bindsym $mod+u exec --no-startup-id /home/yominater/.scripts/secondDisplay.sh
 #****************************************************************************
 
 # change focus
