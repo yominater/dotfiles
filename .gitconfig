@@ -1,0 +1,6 @@
+[user]
+	email = alexandertrains4@gmail.com
+	name = yominater
+[core]
+	autocrlf = false
+	editor = vim
