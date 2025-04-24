@@ -15,6 +15,9 @@
 !.scripts/touchpad.sh
 !.bashrc
 
+# nvim
+!.config/nvim/**
+
 # scripts
 !/.scripts/3secondDisplay.sh
 !/.scripts/alternating_layouts.py

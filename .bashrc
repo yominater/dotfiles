@@ -8,11 +8,11 @@ alias obsidian="flatpak run md.obsidian.Obsidian"
 alias lx="exa --icons=auto --no-quotes --color=auto -D1 && exa --icons=auto --no-quotes --color=auto -f1"
 alias ll="exa -l -D && exa -lf"
 #alias la="exa -A --ignore-glob '*.tmp'"
-alias la="exa --icons=auto --no-quotes --color=auto -D1 -A --ignore-glob '*.tmp' && exa --icons=auto --no-quotes --color=auto -f1 -A --ignore-glob '*.tmp'"
+alias la="exa --icons=auto --no-quotes --color=auto -D1 -A -l --ignore-glob '*.tmp' && exa --icons=auto --no-quotes --color=auto -f1 -A -l --ignore-glob '*.tmp'"
 # du -sh but with hidden files
 alias dul="du -sh .[!.]* * 2>/dev/null"
 # lx as ls
-alias ls="lx"
+#alias ls="lx"
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)

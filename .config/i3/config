@@ -52,6 +52,9 @@ exec --no-startup-id export GTK_THEME=Adwaita:dark  # Or your preferred theme
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 
+# use picom
+exec --no-startup-id picom
+
 # ***********************************************************************************************************************************
 # Right click to win + left click
 bindsym --release Mod4+button1 button3

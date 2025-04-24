@@ -59,7 +59,7 @@ memory {
 
 tztime local {
         #format = "󰃭 %d-%m-%Y %H:%M"
-        format = " %H:%M"
+        format = " %H:%M 󰣭 "
 }
 #🕒♪
 volume master {
