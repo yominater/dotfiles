@@ -26,7 +26,7 @@ exec --no-startup-id ~/.scripts/alternating_layouts.py
 #exec --no-startup-id dex --autostart --environment i3
 
 # set display to be correct
-exec_always --no-startup-id sh -c "~/.scripts/3secondDisplay.sh && feh --no-fehbg --bg-scale '/home/yominater/images/Wallpapers/ocean_artwork.png'"
+exec_always --no-startup-id sh -c "~/.scripts/secondDisplay.sh && feh --no-fehbg --bg-scale '/home/yominater/images/Wallpapers/ocean_artwork.png'"
 
 # start solid color for wallpaper
 #exec --no-startup-id ~/.scripts/.fehbg

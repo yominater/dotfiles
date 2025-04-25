@@ -1,8 +1,7 @@
 # Custom aliases
-alias snore="sudo pm-suspend"
 # Open Obsidian
-alias obs="flatpak run md.obsidian.Obsidian"
 alias obsidian="flatpak run md.obsidian.Obsidian"
+alias i3conf="vim /home/yominater/.config/i3/config"
 
 # lx for better colors
 alias lx="exa --icons=auto --no-quotes --color=auto -D1 && exa --icons=auto --no-quotes --color=auto -f1"
