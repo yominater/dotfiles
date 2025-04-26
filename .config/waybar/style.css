@@ -5,6 +5,20 @@
     font-size: 25px;
 }
 
+.modules-left {
+    margin: 2px 0 0 5px;
+  background: rgba(15, 15, 23, 1);
+	border-radius: 20px;
+	padding-left: 0px;
+}
+
+.modules-right {
+    margin: 2px 0 0 5px;
+  background: rgba(15, 15, 23, 1);
+	border-radius: 20px;
+	padding-left: 4px;
+}
+
 #custom-notification {
   font-family: "JetBrains Mono Nerd Font";
   font-size: 17px;
@@ -14,11 +28,11 @@
 
 window#waybar {
   /*background: rgba(23, 23, 23, 0.63);*/
-  background: #0F0F17;
+  background: rgba(15, 15, 23, 0);
   /*  border-radius: 15px; */
  /*  border: 2px solid #124323; */
 /* border: 0px solid #A1BDCE; */
- border: 3px solid rgba(255, 255, 255, 0.1);
+ border: 3px solid rgba(255, 255, 255, 0);
  border-radius: 10px;
 }
 
@@ -32,18 +46,19 @@ tooltip {
 
 
     }
+   /*
 #workspaces{
-background: rgba(23, 23, 23, 0.0);
+background: rgba(235, 235, 235, 1.0);
     color: #888789;
     box-shadow: none;
 	text-shadow: none;
-    border-radius: 9px;
+    border-radius: 16px;
+    border: none;
     transition: 0.2s ease;
     padding-left: 4px;
     padding-right: 4px;
-    padding-top: 1px;
+    padding-top: 0px;
 }
-
 
 #workspaces button {
 background: rgba(23, 23, 23, 0.0);
@@ -54,22 +69,20 @@ background: rgba(23, 23, 23, 0.0);
     transition: 0.2s ease;
     padding-left: 4px;
     padding-right: 4px;
- /*   animation: ws_normal 20s ease-in-out 1; */
+    animation: ws_normal 20s ease-in-out 1; 
 }
 
 
 
 #workspaces button.active {
 
- 
-  /* background-image: url("/home/anik/Documents/bar1.png");*/
-    transition: all 0.3s ease;
     padding-left: 4px;
-    padding-right: 4px;
+    padding-top: 0px;
     background: #4F797C;
+    border-radius: 50px;
     font-style: normal;
     color: #010F17;
-  /*  transition: all 0.4s cubic-bezier(.55,0.68,.48,1.682); */
+    transition: all 0.4s cubic-bezier(.55,0.68,.48,1.682); 
 }
 
 #workspaces button:hover {
@@ -77,6 +90,28 @@ background: rgba(23, 23, 23, 0.0);
     color: #72D792;
     animation: ws_hover 20s ease-in-out 1;
     transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+*/
+
+#workspaces button {
+    padding: 0px 5px;
+    background-color: transparent;
+	padding-left: 9px;
+	padding-right: 9px;
+    color: #A1BDCE;
+}
+#workspaces button:hover {
+    box-shadow: inherit;
+	background-color: rgba(0,153,153,1);
+}
+
+#workspaces button.active {
+	background-color: rgba(0,119,179,1);
+	border-radius: 50px;
+	padding-left: 9px;
+	padding-right: 9px;
+	color: rgba(15, 15, 23, 1);
 }
 
 #taskbar button {
@@ -214,6 +249,7 @@ color: #6F8FDB;
     margin: 0px 0px 0px 0px;
     padding-left: 3px;
     padding-right: 3px;
+    font-size: 25;
 }
 #cpu{
 font-weight: normal;
@@ -236,6 +272,7 @@ animation: repeat;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    padding-left: 16px;
 }
 
 @keyframes blink {
@@ -270,6 +307,13 @@ margin: 0px 0px 0px 0px;
 #window{
 color: #A1BDCE;
 font-family: "Martian Mono";
+  background: rgba(15, 15, 23, 1);
+  border-radius: 20px;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+window#waybar.empty #window {
+    background-color: transparent;
 }
 #custom-l_end,
 #custom-r_end,
@@ -303,6 +347,7 @@ font-weight: normal;
   background-color: transparent;
   box-shadow: none;
   margin-right: 7px;
+
 }
 
 #backlight-slider trough,

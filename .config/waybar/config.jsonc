@@ -8,7 +8,7 @@
     "mod": "dock",
    "margin-left": 10,
  "margin-right": 10,
- "margin-top": 7,
+ "margin-top": 10,
  "margin-bottom": 0,
     "exclusive": true,
     "passthrough": false,
@@ -18,16 +18,16 @@
 
 // positions generated based on config.ctl //
 
-	"modules-left": ["custom/smallspacer","hyprland/workspaces","custom/spacer","mpris"],
-	"modules-center": ["custom/padd","custom/l_end","custom/r_end","hyprland/window","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","group/expand","network","group/expand-3","group/expand-2","group/expand-4","disk","memory","cpu","clock","custom/notification","custom/padd"],
+	"modules-left": ["custom/smallspacer","hyprland/workspaces","mpris"],
+	"modules-center": ["hyprland/window"],
+	"modules-right": ["network","group/expand-3","group/expand-2","group/expand-4","disk","memory","cpu","clock","custom/notification","custom/padd"],
 
 
 // sourced from modules based on config.ctl //
 
 "upower": {
      "icon-size": 25,
-     "format": "{percentage} {time}|",
+     "format": "{percentage}:{time}|",
      "format-alt": "{}<span color='orange'>[{time}]</span>",
      "tooltip": true,
      "tooltip-spacing": 20,
@@ -53,7 +53,7 @@
    },
 
 "custom/smallspacer":{
-"format": " ",
+"format": "",
 },
 "disk": {
 	"interval": 30,
@@ -78,7 +78,7 @@
 "mpris": {
 	"format": "{player_icon} {dynamic}",
 	"format-paused": "<span color='grey'>{status_icon} {dynamic}</span>",
-	"max-length": 30,
+	"max-length": 50,
 	"player-icons": {
 		"default": "⏸",
 		"mpv": "🎵"
@@ -138,6 +138,7 @@
  "max-length": 120,
  "icon": false,
  "icon-size": 13,
+ "separate-outputs": true
 },
 
     "custom/power": {
@@ -301,7 +302,7 @@
     },
 
     "clock": {
-        "format": "{:%H:%M %p}",
+        "format": "{:%H:%M}",
         "rotate": 0,
        "on-click": "/usr/local/bin/ags -t ActivityCenter",
         "tooltip-format": "<tt>{calendar}</tt>",
@@ -391,7 +392,7 @@
     },
 
     "pulseaudio": {
-        "format": "{icon}",
+        "format": "{icon} {volume}%",
         "rotate": 0,
         "format-muted": "婢",
         "tooltip-format": "{icon} {desc} // {volume}%",
