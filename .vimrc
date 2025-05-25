@@ -2,7 +2,7 @@ set directory=~/.vim/swap//
 syntax on
 set completeopt=noinsert,menuone,noselect " Modifies the auto-complete menu to behave more like an IDE.
 set autoindent " Indent a new line
-set number " Shows the line numbers
+" set number " Shows the line numbers
 set splitbelow splitright " Change the split screen behavior
 set title " Show file title
 set wildmenu " Show a more advance menu
@@ -16,3 +16,12 @@ Plug 'dracula/vim', { 'name': 'dracula' }
 
 call plug#end()
 " autocmd vimenter * ++nested colorscheme gruvbox
+
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
