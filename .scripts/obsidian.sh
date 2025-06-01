@@ -1,0 +1,4 @@
+#!/bin/bash
+export GDK_SCALE=2.9
+export GDK_DPI_SCALE=0.5
+__NV_PRIME_RENDERER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia XCURSOR_THEME=breeze_cursors XCURSOR_SIZE=50 ~/apps/Obsidian*

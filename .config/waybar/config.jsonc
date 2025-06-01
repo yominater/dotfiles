@@ -9,7 +9,7 @@
    "margin-left": 10,
  "margin-right": 10,
  "margin-top": 10,
- "margin-bottom": 0,
+ "margin-bottom": 10,
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
@@ -19,19 +19,20 @@
 // positions generated based on config.ctl //
 
 	"modules-left": ["custom/smallspacer","hyprland/workspaces","mpris"],
-	"modules-center": ["hyprland/window"],
-	"modules-right": ["network","group/expand-3","group/expand-2","group/expand-4","disk","memory","cpu","clock","custom/notification","custom/padd"],
+	"modules-center": [],
+	"modules-right": ["network","group/expand-3","group/expand-2","group/expand-4","memory","cpu","custom/gpuinfo","clock","custom/spacer","custom/power"],
 
 
 // sourced from modules based on config.ctl //
 
 "upower": {
-     "icon-size": 25,
-     "format": "{percentage}:{time}|",
-     "format-alt": "{}<span color='orange'>[{time}]</span>",
+     "icon-size": 35,
+     "format": "{percentage}|",
+     "format-alt": "{}<span color='orange'>[{time}]</span>|",
      "tooltip": true,
      "tooltip-spacing": 20,
-      "on-click-right": "pkill waybar & hyprctl dispatch exec waybar"
+      "on-click-right": "pkill waybar & hyprctl dispatch exec waybar",
+     "max-length": 10
 },
 
 "upower#headset": {
@@ -49,11 +50,11 @@
        "transition-to-left": true,
          "click-to-reveal": true
      },
-     "modules": ["upower","upower/headset"]
+     "modules": ["upower","upower/headset", "custom/gpuinfo"]
    },
 
 "custom/smallspacer":{
-"format": "",
+"format": " 󰣇 ",
 },
 "disk": {
 	"interval": 30,
@@ -73,6 +74,18 @@
     "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
     "align": 2
 },
+"gpuinfo": {
+        "format": "󱓞 {}%",
+        "format-alt": " {}°C",
+        "tooltip": false,
+        // "exec-if": "nvidia-smi",
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+        "exec-alt": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
+        // "return-type": "json",
+        // "tooltip": false,
+        "interval": 3
+},
+
 
 
 "mpris": {
@@ -142,10 +155,10 @@
 },
 
     "custom/power": {
-        "format": "@{}",
+        "format": "⏻",
         "rotate": 0,
-        "on-click": "ags -t ControlPanel",
-        "on-click-right": "pkill ags",
+        "on-click": "nwg-bar -a end -i 400",
+        "on-click-right": "pkill nwg-bar",
         "tooltip": true
     },
     
@@ -339,6 +352,7 @@
         "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
      //  "format-icons": ["","","","","","","",""],  
        //"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "on-click":"",
         "on-click-right": "pkill waybar & hyprctl dispatch exec waybar",
       //  "format-icons": [<i class='fa-solid fa-wifi-slash'></i>],
     

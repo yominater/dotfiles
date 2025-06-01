@@ -1,0 +1,48 @@
+{
+    "layer": "top",
+    "margin-left": 10,
+    "margin-right": 10,
+    "margin-bottom": 10,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": [],
+    "modules-right": ["upower", "memory", "cpu", "clock"],
+    "sway/window": {
+        "max-length": 50
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+	    "format": "{:%H:%M}",
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+    "memory": {
+    	"interval": 1,
+    	"format": "{percentage}%|",
+    	"max-length": 10,
+    	"align": 2
+    },
+    "cpu": {
+    	"interval": 1,
+    	"format": "{usage}%|",
+    	"format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+    	"align": 2
+    },
+"network#speed": {
+"interval": 1,
+"format": "{ifname}",
+"format-wifi": "{icon} {bandwidthDownBytes}  {bandwidthUpBytes} ",
+"format-ethernet": "{icon} {bandwidthDownBytes}  {bandwidthUpBytes} ",
+"format-disconnected": "󰌙",
+"tooltip-format": "{ipaddr}",
+"format-linked": "󰈁 {ifname} (No IP)",
+"tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+"tooltip-format-ethernet": "{ifname} 󰌘",
+"tooltip-format-disconnected": "󰌙 Disconnected",
+"max-length": 30,
+"format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
+}, 
+
+
+}
