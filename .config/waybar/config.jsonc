@@ -18,7 +18,7 @@
 
 // positions generated based on config.ctl //
 
-	"modules-left": ["custom/smallspacer","hyprland/workspaces","mpris"],
+	"modules-left": ["custom/smallspacer","hyprland/workspaces","cava","mpris"],
 	"modules-center": [],
 	"modules-right": ["network","group/expand-3","group/expand-2","group/expand-4","memory","cpu","custom/gpuinfo","clock","custom/spacer","custom/power"],
 

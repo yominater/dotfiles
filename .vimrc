@@ -5,6 +5,7 @@ set ruler         " Show cursor position (line, column)
 set laststatus=2  " Ensure the status line is always visible
 set ic "ignore case for searches
 syntax on
+set undofile " persistent undo across sessions
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *

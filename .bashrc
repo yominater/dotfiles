@@ -10,6 +10,9 @@ alias prime-run='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia'
 alias jctl="journalctl -p 3 -xb"
 alias gpu="watch -n 1 -t -x nvidia-smi"
 
+# nvim for Awesome vault
+alias na="cd ~/Awesome_vault_2; nvim"
+
 
 # lx for better colors
 alias lx="exa --icons=auto --no-quotes --color=auto -D1 && exa --icons=auto --no-quotes --color=auto -f1"
