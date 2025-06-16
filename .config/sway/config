@@ -107,8 +107,11 @@ bindsym $mod+d exec "rofi -modi drun,run -show drun"
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # scatchpad
-bindsym $mod+e move scratchpad
+bindsym $mod+e move to scratchpad
+bindsym F2 move to scratchpad
+
 bindsym F5 scratchpad show
+bindsym F1 scratchpad show
 
 bindsym $mod+s move scratchpad
 bindsym $mod+Shift+s scratchpad show
