@@ -8,6 +8,7 @@
 !/.config/sway/config
 !/.config/i3status/config
 !.Xmodmap
+!.bash_aliases
 
 # vim files
 !.vimrc
