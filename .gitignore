@@ -5,6 +5,7 @@
 !/.config/i3/
 !/.config/i3status/
 !/.config/i3/config
+!/.config/sway/config
 !/.config/i3status/config
 !.Xmodmap
 
@@ -20,6 +21,7 @@
 
 # neovim files
 !/.config/neovim/
+!/.config/neovim/init.lua
 !/.config/neovim/*
 !/.config/neovim/lua/*
 !/.config/neovim/lua/plugins/*
@@ -28,7 +30,5 @@
 !/.config/neovim/lua/config/options.lua
 !/.config/neovim/lua/plugins/lazy.lua
 !/.config/neovim/lua/plugins/keymaps.lua
-
-
 
 # user folders
