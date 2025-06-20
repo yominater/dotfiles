@@ -25,7 +25,8 @@ opt.splitright = true                                             -- Put new win
 opt.statuscolumn = [[%!v:lua.require'snacks.statuscolumn'.get()]] --define status line
 opt.undofile = true
 opt.undolevels = 10000
-
+opt.number = true          -- Print line number
+opt.relativenumber = false -- Relative line numbers
 
 local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
