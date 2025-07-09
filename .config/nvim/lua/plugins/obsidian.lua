@@ -44,9 +44,9 @@ return {
       -- Optional, if you want to change the date format of the default alias of daily notes.
       -- alias_format = "%B %-d, %Y",
       -- Optional, default tags to add to each new daily note created.
-      default_tags = { "Daily-Notes" },
+      default_tags = { "Daily_Notes" },
       -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-      template = nil
+      template = "~/Awesome_vault_2/Atlas/Bins/Templates/Template, Daily Note.md"
     },
 
     -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
@@ -192,7 +192,7 @@ return {
 
     picker = {
       -- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', or 'mini.pick'.
-      name = "fzf-lua.nvim",
+      name = "telescope.nvim",
       -- Optional, configure key mappings for the picker. These are the defaults.
       -- Not all pickers support all mappings.
       note_mappings = {

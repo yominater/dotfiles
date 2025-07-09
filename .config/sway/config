@@ -17,6 +17,9 @@ input * {
 	repeat_rate 30
 	pointer_accel 0.01
 }
+# input "type:keyboard" {
+#   xkb_file /home/yomi/.xkb/symbols/custom-xkb
+# }
 input "ROCCAT ROCCAT Burst Pro" {
 	accel_profile "flat"
 	pointer_accel -1
@@ -27,11 +30,19 @@ input type:pointer {
 }
 
 # AUTOSTART SECTION **********************************
+# set swayidle to run
+exec --no-startup-id swayidle -w \
+  timeout 600 'swaylock -f -c 000000 --indicator-idle-visible' \
+  timeout 900 'systemctl suspend' \
+  before-sleep 'swaylock -f -c 000000 --indicator-idle-visible'
+  # resume 'swaylock -f -c 000000 --indicator-idle-visible'
+
+
 # set a wallpaper
 # output "*" bg /home/yomi/images/wallpapers fill
 # output "*" bg #000000 solid_color
 # make the touchpad not so sensitive
-exec --no-startup-id ~/.scripts/touchpad.sh
+# exec --no-startup-id ~/.scripts/touchpad.sh
 # start redshift
 exec --no-startup-id redshift -l 34.00071:-81.03481
 # start syncthing (hopefully)
@@ -45,7 +56,7 @@ exec --no-startup-id pkill pipewire-pulse
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- swaylock --nofork
 
 # start battery notifaction notification
 exec --no-startup-id i3-battery-popup -n
@@ -109,8 +120,11 @@ bindsym F2 move to scratchpad
 bindsym F5 scratchpad show
 bindsym F1 scratchpad show
 
-bindsym $mod+s move scratchpad
-bindsym $mod+Shift+s scratchpad show
+#bindsym $mod+s move scratchpad
+#bindsym $mod+Shift+s scratchpad show
+
+# System commands
+bindsym $mod+p exec systemctl suspend -i
 
 # change focus
 bindsym $mod+h focus left
@@ -187,7 +201,7 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
-bindsym $mod+o exec --no-startup-id ~/applications/Obsidian-1.8.4.AppImage
+bindsym $mod+o exec --no-startup-id OBSIDIAN_USE_WAYLAND=1 ~/applications/Obsidian-1.8.4.AppImage -enable-features=UseOzonePlatform -ozone-platform=wayland
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1; workspace number $ws1
@@ -258,6 +272,6 @@ smart_gaps off
 hide_edge_borders smart
 
 # no title bar
-default_border pixel 0
-default_floating_border pixel 1
-for_window [class="^.*"] border pixel 3
+#default_border pixel 0
+#default_floating_border pixel 1
+#for_window [class="^.*"] border pixel 3
