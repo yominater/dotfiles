@@ -32,8 +32,8 @@ input type:pointer {
 # AUTOSTART SECTION **********************************
 # set swayidle to run
 exec --no-startup-id swayidle -w \
-  timeout 600 'swaylock -f -c 000000 --indicator-idle-visible' \
-  timeout 900 'systemctl suspend' \
+  timeout 900 'swaylock -f -c 000000 --indicator-idle-visible' \
+  timeout 1200 'systemctl suspend' \
   before-sleep 'swaylock -f -c 000000 --indicator-idle-visible'
   # resume 'swaylock -f -c 000000 --indicator-idle-visible'
 
@@ -44,7 +44,7 @@ exec --no-startup-id swayidle -w \
 # make the touchpad not so sensitive
 # exec --no-startup-id ~/.scripts/touchpad.sh
 # start redshift
-exec --no-startup-id redshift -l 34.00071:-81.03481
+# exec --no-startup-id redshift -l 34.00071:-81.03481
 # start syncthing (hopefully)
 exec --no-startup-id syncthing
 exec --no-startup-id pkill wireplumber
@@ -94,7 +94,7 @@ tiling_drag modifier
 
 # start a terminal
 bindsym $mod+Return exec foot
-bindsym $mod+Shift+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec foot -e tmux new-session
 
 # kill focused window
 bindsym $mod+q kill
@@ -272,6 +272,6 @@ smart_gaps off
 hide_edge_borders smart
 
 # no title bar
-#default_border pixel 0
-#default_floating_border pixel 1
-#for_window [class="^.*"] border pixel 3
+default_border pixel 0
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 3

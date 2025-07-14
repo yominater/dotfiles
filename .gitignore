@@ -18,10 +18,9 @@
 !.vim/plugged/
 !.vim.autoload/
 !.vim/autoload/*
-!.viminfo
 
 # neovim files
-!/.config/neovim/
+!/.config/neovim
 !/.config/neovim/init.lua
 !/.config/neovim/*
 !/.config/neovim/lua/*
