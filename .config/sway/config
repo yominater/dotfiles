@@ -50,6 +50,8 @@ exec --no-startup-id syncthing
 exec --no-startup-id pkill wireplumber
 exec --no-startup-id pkill pipewire
 exec --no-startup-id pkill pipewire-pulse
+# exec --no-startup-id mako
+# for notify-send
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.

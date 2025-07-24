@@ -34,5 +34,5 @@ autocmd BufReadPost *
      \ endif
 
 " Don't store too much search and input history
-set viminfo+=/100,@100
+" set viminfo+=/100,@100
 

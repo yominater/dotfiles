@@ -6,13 +6,14 @@
 [[ $- != *i* ]] && return
 
 PS1='[\u@\h \W]\$ '
-# lx for better colors
-#alias la="exa -A --ignore-glob '*.tmp'"
+
 # user aliases
-# option to add aliases in a seperate file
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# ENV variables
+export EDITOR=nvim
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -56,3 +57,4 @@ else
 	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
+
