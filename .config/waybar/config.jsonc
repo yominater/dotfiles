@@ -3,6 +3,7 @@
 {
 	"layer": "top",
 	"position": "top",
+  "height": 25,
 
 	"modules-left": [
 		"hyprland/workspaces",
@@ -15,16 +16,16 @@
 	],
 	"modules-right": [
 		"custom/left-arrow-dark",
-		"memory",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"cpu",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"battery",
+		"memory",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"disk",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"battery",
 		"custom/left-arrow-light",
 		"custom/arch"
 	],
@@ -90,7 +91,8 @@
 			"",
 			"",
 			""
-		]
+		],
+    "on-click": "pkill waybar; waybar &"
 	},
 	"disk": {
 		"interval": 5,
