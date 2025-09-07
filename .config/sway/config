@@ -41,10 +41,6 @@ exec --no-startup-id swayidle -w \
 # set a wallpaper
 # output "*" bg /home/yomi/images/wallpapers fill
 # output "*" bg #000000 solid_color
-# make the touchpad not so sensitive
-# exec --no-startup-id ~/.scripts/touchpad.sh
-# start redshift
-# exec --no-startup-id redshift -l 34.00071:-81.03481
 # start syncthing (hopefully)
 exec --no-startup-id syncthing
 exec --no-startup-id pkill wireplumber
@@ -66,17 +62,17 @@ exec --no-startup-id i3-battery-popup -n
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 # Raise volume to a cap of 100
-bindsym F10 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && \
-    [ "$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -1)" -gt 100 ] && \
-    pactl set-sink-volume @DEFAULT_SINK@ 100% && $refresh_i3status
- bindsym Shift+F10 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && \
-    [ "$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -1)" -gt 100 ] && \
-    pactl set-sink-volume @DEFAULT_SINK@ 100% && $refresh_i3status
+# bindsym F10 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && \
+#     [ "$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -1)" -gt 100 ] && \
+#     pactl set-sink-volume @DEFAULT_SINK@ 100% && $refresh_i3status
+#  bindsym Shift+F10 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && \
+#     [ "$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -1)" -gt 100 ] && \
+#     pactl set-sink-volume @DEFAULT_SINK@ 100% && $refresh_i3status
 
 # Reduce volume (including small changes)
-bindsym F9 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym Shift+F9 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
-bindsym F8 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+# bindsym F9 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+# bindsym Shift+F9 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
+# bindsym F8 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 
 # Brightness changers
 bindsym F7 exec --no-startup-id brightnessctl set +5%
@@ -105,7 +101,7 @@ bindsym $mod+q kill
 bindsym $mod+f exec firefox
 
 # start neovim
-bindsym $mod+n exec lxterminal -e nvim ~/Awesome_vault_2
+bindsym $mod+n exec foot -e nvim ~/Awesome_vault_2
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run

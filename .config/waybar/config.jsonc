@@ -51,7 +51,6 @@
     "tooltip":false
   },
 
-
 	"hyprland/workspaces": {
 		"disable-scroll": true,
 		"format": "{name}"
@@ -72,7 +71,7 @@
 
 	"memory": {
 		"interval": 5,
-		"format": " {}%"
+		"format": " {}%/{swapPercentage}%"
 	},
 	"cpu": {
 		"interval": 5,
@@ -96,7 +95,7 @@
 	},
 	"disk": {
 		"interval": 5,
-		"format": "{specific_free:0.1f} GB",
+		"format": " {specific_free:0.1f} GB",
 		"path": "/",
     "unit": "GB"
 	},
