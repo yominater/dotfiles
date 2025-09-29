@@ -17,9 +17,9 @@ order += "wireless _first_"
 #order += "load"
 order += "cpu_usage"
 order += "disk /"
-#order += "memory"
+order += "memory"
 order += "volume master"
-order += "battery all"
+#order += "battery all"
 order += "tztime local"
 #order += "exec custom_brightness"
 
@@ -68,7 +68,6 @@ volume master {
         device = "default"
         mixer = "Master"
         mixer_idx = 0
-	min_width = 100
 }
 #exec custom_brightness {
 #	command = "~/.config/i3/screen_brightness.sh"

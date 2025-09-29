@@ -1,3 +1,4 @@
+# i3 config file for Mint
 set $mod Mod1
 set $win Mod4
 
@@ -7,32 +8,28 @@ set $win Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 9
 
 # AUTOSTART SECTION **********************************
-# make the touchpad not so sensitive
-exec --no-startup-id ~/.scripts/touchpad.sh
+
+# KEYBOARD ****
+# set keyboard speed to be fast
+exec --no-startup-id xset r rate 200 35
+
 # turn caps lock to control
-# exec --no-startup-id xmodmap ~/.xmodmap
+exec --no-startup-id setxkbmap -option caps:escape
+
+# SCREEN ****
 # redshift
 exec --no-startup-id redshift -l 34.00071:-81.03481
+
+# i3 ****
 # auto tiling
 exec_always --no-startup-id i3-auto-layout
 exec --no-startup-id ~/.scripts/alternating_layouts.py
 
-# I3 example config autostart
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
-#exec --no-startup-id dex --autostart --environment i3
-
-# set display to be correct
-exec_always --no-startup-id sh -c "~/.scripts/secondDisplay.sh && feh --no-fehbg --bg-scale '/home/yominater/images/Wallpapers/ocean_artwork.png'"
-
 # start solid color for wallpaper
 #exec --no-startup-id ~/.scripts/.fehbg
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -41,9 +38,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.scripts/lock.sh
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 #exec --no-startup-id nm-applet
-
-# start battery notifaction notification
-exec --no-startup-id i3-battery-popup -n
 
 # change theme to dark for cinnamon apps
 exec --no-startup-id export XDG_CURRENT_DESKTOP=Cinnamon
@@ -74,6 +68,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # Use media buttons to alter audio
 bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrevious exec playerctl previous
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -83,13 +79,13 @@ floating_modifier $mod
 tiling_drag modifier
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # Send the terminal to the scratchpad
-bindsym $mod+i move scratchpad
+bindsym $mod+Shift+s move scratchpad
 
 # Show the scratchpad terminal
-bindsym $mod+minus scratchpad show
+bindsym $mod+s scratchpad show
 bindsym $mod+shift+minus  move workspace current
 
 # kill focused window
@@ -98,8 +94,7 @@ bindsym $mod+q kill
 ## APP shortcuts
 bindsym $mod+f exec firefox &
 bindsym $mod+b exec gnome-boxes &
-bindsym $mod+p exec pithos &
-bindsym $mod+o exec --no-startup-id obsidian
+bindsym $mod+o exec flatpak run md.obsidian.Obsidian
 bindsym $mod+y exec ~/applications/Mechvibes-2.3.4.AppImage
 
 # start dmenu (a program launcher)
@@ -108,9 +103,6 @@ bindsym $mod+d exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
-
-# refresh eternal screen
-bindsym $mod+u exec --no-startup-id /home/yominater/.scripts/secondDisplay.sh
 
 #HOTKEYS****************************************************************************
 
@@ -139,18 +131,18 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+c split h
+bindsym $mod+v split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+c split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+a fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -176,7 +168,6 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-set $ws11 "11:music"
 
 # toggle workspace
 bindsym $mod+Tab workspace back_and_forth
@@ -192,7 +183,6 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
-bindsym $mod+m workspace number $ws11
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1 workspace number $ws1
@@ -205,17 +195,17 @@ bindsym $mod+Shift+7 move container to workspace number $ws7 workspace number $w
 bindsym $mod+Shift+8 move container to workspace number $ws8 workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9 workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10 workspace number $ws10
-bindsym $mod+Shift+m move container to workspace number $ws11 workspace number $ws11
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+m exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+m i3-msg exit
 
 # system level shortcuts
-bindsym $win+s exec systemctl suspend
+bindsym $mod+p exec systemctl suspend
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -258,13 +248,11 @@ bar {
 }
 # custom visuals  ******************************************************************
 gaps inner 0
-# Kill focused window with Mod+k
-bindsym $mod+Shift+q exec --no-startup-id pkill -9 -f $(xprop -root | awk '/_NET_WM_PID/ {print $3}')
 
 # no title bar
-default_border pixel 0
-default_floating_border pixel 1
-for_window [class="^.*"] border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
+for_window [class="^.*"] border pixel 2
 
 # Brightness changers
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
