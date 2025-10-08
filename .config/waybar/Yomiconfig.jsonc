@@ -1,0 +1,123 @@
+// -*- mode: json -*-
+
+{
+	"layer": "top",
+	"position": "top",
+  "height": 26,
+
+	"modules-left": [
+		"hyprland/workspaces",
+		"custom/right-arrow-dark"
+	],
+	"modules-center": [
+		"custom/left-arrow-dark",
+		"clock#2",
+		"custom/right-arrow-dark"
+	],
+	"modules-right": [
+		"custom/left-arrow-dark",
+		"cpu",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"memory",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"pulseaudio",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"disk",
+		"custom/left-arrow-light",
+		"custom/arch"
+	],
+
+	"custom/left-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+  "custom/arch": {
+    "format": "󰣇",
+    "on-click": "pkill waybar; waybar --config ~/.config/waybar/Yomiconfig.jsonc --style ~/.config/waybar/Yomistyle.css &",
+    "tooltip":false
+  },
+
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"format": "{name}"
+	},
+
+	"clock#1": {
+		"format": "{:%a}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "{:%H:%M}",
+		"tooltip": false
+	},
+	"clock#3": {
+		"format": "{:%m-%d}",
+		"tooltip": false
+	},
+	// 
+	"memory": {
+		"interval": 5,
+		"format": "{}%/{swapPercentage}%"
+	},
+	// 
+	"cpu": {
+		"interval": 5,
+		"format": "{usage:2}%"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+    "on-click": "pkill waybar; waybar &"
+	},
+	// 
+	"disk": {
+		"interval": 5,
+		"format": "{specific_free:0.1f}",
+		"path": "/home/yomi/",
+    "unit": "GB"
+	},
+	"tray": {
+		"icon-size": 15,
+
+"pulseaudio": {
+	"format": "{icon} {volume:2}%",
+	"format-bluetooth": "{icon}  {volume}%",
+	"format-muted": "MUTE",
+	"format-icons": {
+		"headphones": "",
+		"default": [
+			"",
+			""
+		]
+	},
+	"scroll-step": 5,
+	"on-click": "pamixer -t",
+	"on-click-right": "pavucontrol"
+},}
+}

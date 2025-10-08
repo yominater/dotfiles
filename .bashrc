@@ -2,17 +2,15 @@
 alias snore="sudo pm-suspend"
 # Open Obsidian
 alias obsidian="~/apps/Obsidian*"
-alias hyprconf="vim ~/.config/hypr/hyprland.conf"
-alias wayconf="vim ~/.config/waybar/config.jsonc"
-alias swayconf="vim ~/.config/sway/config"
+alias hyprconf="nvim ~/.config/hypr/hyprland.conf"
+alias wayconf="nvim ~/.config/waybar/config.jsonc"
+alias swayconf="nvim ~/.config/sway/config"
 
 alias prime-run='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia'
 alias jctl="journalctl -p 3 -xb"
-alias gpu="watch -n 1 -t -x nvidia-smi"
 
 # nvim for Awesome vault
 alias na="cd ~/Awesome_vault_2; nvim"
-
 
 # lx for better colors
 alias lx="exa --icons=auto --no-quotes --color=auto -D1 && exa --icons=auto --no-quotes --color=auto -f1"
@@ -23,6 +21,8 @@ alias la="exa --icons=auto --no-quotes --color=auto -D1lhMa --total-size --ignor
 alias dul="du -sh .[!.]* * 2>/dev/null"
 # lx as ls
 alias ls="lx"
+# waybar
+alias waybarYomi="waybar --config ~/.config/waybar/Yomiconfig.jsonc --style ~/.config/waybar/Yomistyle.css"
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)

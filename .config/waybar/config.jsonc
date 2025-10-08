@@ -18,9 +18,9 @@
 
 // positions generated based on config.ctl //
 
-	"modules-left": ["custom/smallspacer","hyprland/workspaces","cava","mpris"],
+	"modules-left": ["custom/smallspacer","hyprland/workspaces","cava"],
 	"modules-center": [],
-	"modules-right": ["network","group/expand-3","group/expand-2","group/expand-4","memory","cpu","custom/gpuinfo","clock","custom/spacer","custom/power"],
+	"modules-right": ["network","group/expand-2","group/expand-4","memory","cpu","custom/gpuinfo","clock","custom/spacer","custom/power"],
 
 
 // sourced from modules based on config.ctl //
@@ -408,6 +408,7 @@
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "rotate": 0,
+	"icon-size":12,
         "format-muted": "婢",
         "tooltip-format": "{icon} {desc} // {volume}%",
         "scroll-step": 5,
