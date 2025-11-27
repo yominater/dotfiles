@@ -31,10 +31,10 @@ input type:pointer {
 
 # AUTOSTART SECTION **********************************
 # set swayidle to run
-exec --no-startup-id swayidle -w \
-  timeout 900 'swaylock -f -c 000000 --indicator-idle-visible' \
-  timeout 1200 'systemctl suspend' \
-  before-sleep 'swaylock -f -c 000000 --indicator-idle-visible'
+# exec --no-startup-id swayidle -w \
+#   timeout 900 'swaylock -f -c 000000 --indicator-idle-visible' \
+#   timeout 1200 'systemctl suspend' \
+#   before-sleep 'swaylock -f -c 000000 --indicator-idle-visible'
   # resume 'swaylock -f -c 000000 --indicator-idle-visible'
 
 
@@ -118,8 +118,8 @@ bindsym F2 move to scratchpad
 bindsym F5 scratchpad show
 bindsym F1 scratchpad show
 
-#bindsym $mod+s move scratchpad
-#bindsym $mod+Shift+s scratchpad show
+bindsym $mod+Shift+s move scratchpad
+bindsym $mod+s scratchpad show
 
 # System commands
 bindsym $mod+p exec systemctl suspend -i
@@ -220,7 +220,7 @@ bindsym $mod+Shift+r reload
 # exit sway (logs you out of your Wayland session)
 bindsym $mod+m exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit Sway? This will end your Wayland session.' -B 'Yes, exit Sway' 'i3-msg exit'"
 # force quit sway
-bindsym $mod+Shift+m exit
+bindsym $mod+Shift+XF86PowerOff exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -253,7 +253,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	position top
-        status_command ~/.scripts/myi3status.sh
+        status_command i3status
 	# i3status
 	colors {
 		# background #1E1E2E 
@@ -262,7 +262,7 @@ bar {
 		statusline #C6D0F5
 	}
 	# make the workspace only show numbers
-	strip_workspace_numbers yes 
+	strip_workspace_numbers yes
 }
 # custom code ******************************************************************
 gaps inner 0

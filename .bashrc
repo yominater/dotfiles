@@ -14,6 +14,7 @@ fi
 
 # ENV variables
 export EDITOR=nvim
+export PAGER=less
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
