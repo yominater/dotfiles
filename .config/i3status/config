@@ -15,7 +15,7 @@ general {
 
 
 # order += "ipv6"
-order += "wireless _first_"
+#order += "wireless _first_"
 #order += "ethernet _first_"
 #order += "load"
 order += "cpu_usage"
@@ -29,6 +29,7 @@ order += "tztime local"
 wireless _first_ {
         format_up = ""
         format_down = "| W: down"
+        separator = false
 }
 
 ethernet _first_ {
