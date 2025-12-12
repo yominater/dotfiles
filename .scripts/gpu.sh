@@ -1,3 +1,10 @@
 #!/bin/bash
-timeout 1 intel_gpu_top -J -s 1000 | grep '"Render/3D"' | sed -n 's/.*"busy":\s*\([0-9.]*\).*/\1/p'
+
+# Run radeontop in batch mode for 1 second and capture output
+output=$(radeontop -d - -l 1 | grep "GPU use")
+
+# Parse the GPU use percentage number from output
+gpu_use=$(echo $output | grep -oP '\d+(?=%)')
+
+echo "$gpu_use %"
 

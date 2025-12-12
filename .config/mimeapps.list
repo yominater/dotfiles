@@ -1,0 +1,13 @@
+[Added Associations]
+application/vnd.oasis.opendocument.text=libreoffice.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-3.desktop;libreoffice-2.desktop;
+text/plain=nvim-4.desktop;nvim-3.desktop;nvim-2.desktop;userapp-terminator-SQ0MG3.desktop;gvim.desktop;nvim.desktop;
+application/xml=gvim.desktop;
+application/pdf=org.pwmt.zathura.desktop;xpdf.desktop;
+
+[Default Applications]
+application/vnd.oasis.opendocument.text=libreoffice.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-3.desktop;
+text/plain=gvim.desktop
+application/xml=gvim.desktop
+application/pdf=xpdf.desktop

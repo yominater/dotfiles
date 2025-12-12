@@ -1,29 +1,3 @@
-# Custom aliases
-alias snore="sudo pm-suspend"
-# Open Obsidian
-alias obsidian="~/apps/Obsidian*"
-alias hyprconf="nvim ~/.config/hypr/hyprland.conf"
-alias wayconf="nvim ~/.config/waybar/config.jsonc"
-alias swayconf="nvim ~/.config/sway/config"
-
-alias prime-run='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia'
-alias jctl="journalctl -p 3 -xb"
-
-# nvim for Awesome vault
-alias na="cd ~/Awesome_vault_2; nvim"
-
-# lx for better colors
-alias lx="exa --icons=auto --no-quotes --color=auto -D1 && exa --icons=auto --no-quotes --color=auto -f1"
-alias ll="exa -lhM -D --total-size && exa -lf"
-#alias la="exa -A --ignore-glob '*.tmp'"
-alias la="exa --icons=auto --no-quotes --color=auto -D1lhMa --total-size --ignore-glob '*.tmp' && exa --icons=auto --no-quotes --color=auto -f1lA --ignore-glob '*.tmp'"
-# du -sh but with hidden files
-alias dul="du -sh .[!.]* * 2>/dev/null"
-# lx as ls
-alias ls="lx"
-# waybar
-alias waybarYomi="waybar --config ~/.config/waybar/Yomiconfig.jsonc --style ~/.config/waybar/Yomistyle.css"
-
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -34,9 +8,18 @@ case $- in
       *) return;;
 esac
 
+# user aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
+
+export EDITOR=nvim
+export PAGER=less
 
 # append to the history file, don't overwrite it
 shopt -s histappend

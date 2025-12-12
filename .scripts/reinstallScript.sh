@@ -22,3 +22,11 @@ sudo apt install git vim
 echo "Fixing directories ..."
 
 echo " DONE! (and a reboot wouldn't hurt)"
+
+# to add
+Adding gtk apps themes
+Pulling config files from git
+	Hyprland, waybar
+Adding wallpapers
+Instal required packages: hyprland, waybar, neofetch, etc
+

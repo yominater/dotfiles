@@ -1,0 +1,4 @@
+[EmbedSettings]
+embed-application/vnd.oasis.opendocument.text=false
+embed-application/vnd.openxmlformats-officedocument.wordprocessingml.document=false
+embed-text/plain=false

@@ -1,0 +1,56 @@
+[global_config]
+  inactive_color_offset = 1.0
+  ask_before_closing = never
+[keybindings]
+[profiles]
+  [[default]]
+    background_color = "#171421"
+    background_darkness = 0.83
+    background_type = transparent
+    cursor_fg_color = "#000000"
+    cursor_bg_color = "#aaaaaa"
+    cursor_color_default = False
+    font = Ubuntu Nerd Font Medium 10
+    foreground_color = "#f6f5f4"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#171421:#cc0000:#26a269:#c4a000:#12488b:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#33d17a:#fce94f:#2a7bde:#ad7fa8:#34e2e2:#eeeeec"
+    bold_is_bright = True
+  [[default_2_electric_boogaloo]]
+    background_color = "#171421"
+    background_darkness = 0.7
+    background_type = transparent
+    cursor_fg_color = "#000000"
+    cursor_bg_color = "#aaaaaa"
+    cursor_color_default = False
+    font = Ubuntu Mono 14
+    foreground_color = "#f6f5f4"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#171421:#cc0000:#26a269:#c4a000:#12488b:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#33d17a:#fce94f:#2a7bde:#ad7fa8:#34e2e2:#eeeeec"
+    login_shell = True
+    custom_command = /usr/bin/fish
+    use_system_font = False
+    bold_is_bright = True
+  [[sway2]]
+    background_darkness = 1.0
+    cursor_fg_color = "#000000"
+    cursor_bg_color = "#aaaaaa"
+    cursor_color_default = False
+    font = Adwaita Mono 12
+    foreground_color = "#f6f5f4"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#171421:#cc0000:#26a269:#c4a000:#12488b:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#33d17a:#fce94f:#2a7bde:#ad7fa8:#34e2e2:#eeeeec"
+    use_system_font = False
+    bold_is_bright = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
