@@ -9,7 +9,8 @@ alias lA="exa --icons=auto --no-quotes --color=auto --total-size -D1 -l -A --ign
 # user aliases
 alias vi='vim'
 alias nv='NVIM_APPNAME=nvim-obsidian nvim' 
-
+alias plasma='/usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland'
+alias hyprland='start-hyprland'
 # grep
 alias grep='grep --color=auto'
 
